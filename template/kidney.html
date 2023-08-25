@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" type="text/CSS" href="{{url_for('static',filename='page1_style.css')}}">
+    <link rel="stylesheet" type="text/CSS" href="{{url_for('static',filename='kidney.css')}}">
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+	<title>kidney_pred</title>
+    
+</head>
+	<style>
+    #main-footer
+    {
+      color: #FFFFFF;
+      font-family: "Segoe UI";
+      background: #2B2B2B;
+      text-align: center;
+      margin-top: 1px;
+      padding: 16px;
+      bottom: 8px;
+    }</style>
+	
+<body style="background: url(../static/kidney.jpeg); min-height: 100px; background-size: cover; background-attachment: fixed;">
+  <header>
+    <a href="#" class="logo"><i class="ri-capsule-fill"></i><span>MDPS</span></a>
+    <div class="menu">
+    <nav>
+    <ul class="nav">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/news">News Blog</a></li>
+        <li><a href="#">Disease Detection</a>    
+            <ul>
+                <li><a href="/cancer">Cancer</a></li>
+                <li> <a  href="/diabetes">Diabetes</a></li>
+                <li><a href="/heart">Heart</a></li>
+                <li><a  href="/liver">Liver</a></li>
+                <li><a  href="/kidney">Kidney</a></li>
+                <li><a  href="/Malaria">Malaria</a></li>
+                <li><a href="/Pneumonia">Pneumonia</a></li>
+            </ul>
+        </li>
+        <li><a href="/about">About Us</a></li>
+    </ul>
+    <div class="main" id="main_menu"><i class="ri-menu-line"></i></div>
+    </nav>
+    </div>
+  </header>
+  
+
+    <!--<header class="site-header">
+  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+    <div class="container">
+      <a class="navbar-brand mr-4" href="/">ML-MT App</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="/">Home</a>
+          <a class="nav-item nav-link" href="/about">About</a>
+          <a class="nav-item nav-link" href="/cancer">Cancer</a>
+          <a class="nav-item nav-link" href="/diabetes">Diabetes</a>
+          <a class="nav-item nav-link" href="/heart">Heart</a>
+          <a class="nav-item nav-link" href="/liver">Liver</a>
+          <a class="nav-item nav-link" href="/kidney">Kidney</a>
+           <a class="nav-item nav-link" href="/Malaria">Malaria</a>
+           <a class="nav-item nav-link" href="/Pneumonia">Pneumonia</a>
+
+        </div>
+        <!-- Navbar Right Side
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/login">Login</a>
+          <a class="nav-item nav-link" href="/register">Register</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>-->
+
+    <div class="container" >
+      <div class="cancer_heading">
+      <h1 id="c_head" style="color: white;"> Kidney Detection </Details></h1>
+      <h2 id="sub_heading" style="color: white;">Welcome</h2>
+    </div>
+</div>
+
+
+  <form action="/result" method="POST">
+
+    <div id="cancer_form">
+
+    <label for="age">Age : </label>
+    <input type="text" id="age" name="age" placeholder=" Age" class="box" required>
+    <br>
+
+    <label for="bp">B.P : </label>
+    <input type="text" id="bp" name="bp" placeholder=" B.P" class="box" required>
+    <br>
+
+    <label for="al">A.L : </label>
+    <input type="text" id="al" name="al" placeholder=" A.L" class="box" required>
+    <br>
+
+    <label for="pcc">P.C.C : </label>
+    <input type="text" id="pcc" name="pcc" placeholder=" P.C.C" class="box" required>
+    <br>
+
+    <label for="bgr">B.G.R: </label>
+    <input type="text" id="bgr" name="bgr" placeholder=" B.G.R" class="box" required>
+    <br>
+
+    <label for="bu">B.U : </label>
+    <input type="text" id="bu" name="bu" placeholder=" B.U" class="box" required>
+    <br>
+
+    <label for="sc">S.C : </label>
+    <input type="text" id="sc" name="sc" placeholder=" S.C" class="box" required>
+    <br>
+
+
+    <label for="hemo">HEMO : </label>
+    <input type="text" id="hemo" name="hemo" placeholder=" HEMO" class="box" required>
+    <br>
+
+    <label for="pcv">PCV : </label>
+    <input type="text" id="pcv" name="pcv" placeholder=" PCV" class="box" required>
+    <br>
+
+    <label for="htn">HTN: </label>
+    <input type="text" id="htn" name="htn" placeholder=" HTN" class="box" required>
+    <br>
+
+    <label for="dm">D.M : </label>
+    <input type="text" id="dm" name="dm" placeholder=" D.M" class="box" required>
+    <br>
+
+    <label for="appet">Appet: </label>
+    <input type="text" id="appet" name="appet" placeholder=" Appet" class="box" required>
+    <br>
+    <br>
+
+  <center><input type="submit" value="Submit" style="background: rgb(211, 0, 0); border-radius: 50%; width: 30%; height: 3.0em;"> </center> <br><br><br>
+    </center>
+</form>
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<footer id="main-footer">
+      Copyright &copy; 2020
+    </footer>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" type="text/CSS" href="{{url_for('static',filename='page1_style.css')}}">
+    <link rel="stylesheet" type="text/CSS" href="{{url_for('static',filename='cancer_style.css')}}">
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+
+	<title>Cancer_pred</title>
+</head>
+	<style>
+	#main-footer
+    {
+      color: #FFFFFF;
+      font-family: "Segoe UI";
+      background: #2B2B2B;
+      text-align: center;
+      margin-top: 75px;
+      padding: 16px;
+      bottom: 8px;
+		}</style>
+<body style="background: url(../static/cnacer_image.jpeg); min-height: 100px; background-size: cover; background-attachment: fixed;">
+  <header>
+    <a href="#" class="logo"><i class="ri-capsule-fill"></i><span>MDPS</span></a>
+    <div class="menu">
+    <nav>
+    <ul class="nav">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/news">News Blog</a></li>
+        <li><a href="#">Disease Detection</a>    
+            <ul>
+                <li><a href="/cancer">Cancer</a></li>
+                <li> <a  href="/diabetes">Diabetes</a></li>
+                <li><a href="/heart">Heart</a></li>
+                <li><a  href="/liver">Liver</a></li>
+                <li><a  href="/kidney">Kidney</a></li>
+                <li><a  href="/Malaria">Malaria</a></li>
+                <li><a href="/Pneumonia">Pneumonia</a></li>
+            </ul>
+        </li>
+        <li><a href="#" >About Us</a></li>
+    </ul>
+    <div class="main" id="main_menu"><i class="ri-menu-line"></i></div>
+    </nav>
+    </div>
+  </header>
+        <!-- Navbar Right Side 
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/login">Login</a>
+          <a class="nav-item nav-link" href="/register">Register</a>
+        </div>-->
+      </div>
+    </div>
+  </nav>
+</header>
+    <div class="container">
+      <div class="cancer_heading">
+      <h1 id="c_head"> Cancer Detection Detection </Details></h1>
+      <h2 id="sub_heading">Welcome</h2>
+    </div>
+    </div>
+    <form action="/result" method="POST">
+
+<div id="cancer_form">
+    <label for="Radius_mean">Radius_mean : </label>
+    <input type="text" id="Radius_mean" name="Radius_mean" placeholder=" Enter Radius Mean" class="box" required>
+    <br>
+
+    <label for="Texture_mean">Texture_mean : </label>
+    <input type="text" id="Texture_mean" name="Texture_mean" placeholder=" Enter Texture Mean" class="box" required>
+    <br>
+
+    <label for="BloodPressure">Perimeter_mean : </label>
+    <input type="text" id="Perimeter_mean" name="Perimeter_mean" placeholder=" Enter Perimeter Mean" class="box" required>
+    <br>
+
+    <label for="Area_mean">Area_mean : </label>
+    <input type="text" id="Area_mean" name="Area_mean" placeholder=" Enter Area Mean" class="box" required>
+    <br>
+
+    <label for="Smoothness_mean">Smoothness_mean : </label>
+    <input type="text" id="Smoothness_mean" name="Smoothness_mean" placeholder="Enter Smoothness_mean" class="box" required>
+    <br>
+
+    <label for="Compactness_mean">Compactness_mean: </label>
+    <input type="text" id="Compactness_mean" name="Compactness_mean" placeholder="Enter Compactness_mean" class="box" required>
+    <br>
+
+    <label for="Concavity_mean">Concavity_mean: </label>
+    <input type="text" id="Concavity_mean" name="Concavity_mean" placeholder="Enter concavity_mean" class="box" required>
+    <br>
+
+    <label for="concave points_mean">Concave points_mean: </label>
+    <input type="text" id="concave points_mean" name="concave points_mean" placeholder="Enter Concave points-mean" class="box" required><br>
+
+    <label for="symmetry_mean">Symmetry_mean: </label>
+    <input type="text" id="symmetry_mean" name="symmetry_mean" placeholder="Enter symmetry_mean" class="box" required>
+    <br>
+
+    <label for="Compactness_mean">Fractal_dimension_mean: </label>
+    <input type="text" id="fractal_dimension_mean" name="fractal_dimension_mean" placeholder="Enter Fractal_dimension_mean" class="box" required>
+    <br>
+
+    <label for="radius_se">Radius_se: </label>
+    <input type="text" id="radius_se" name="radius_se"placeholder=" Enter Radius se" class="box" required>
+    <br>
+
+    <label for="texture_se">Texture_se: </label>
+    <input type="text" id="texture_se" name="texture_se"placeholder=" Enter Texture se" class="box" required>
+    <br>
+
+    <label for="perimeter_se">Perimeter_se: </label>
+    <input type="text" id="perimeter_se" name="perimeter_se" placeholder=" Enter Perimeter se" class="box" required>
+    <br>
+
+    <label for="area_se">Area_se: </label>
+    <input type="text" id="area_se" name="area_se" placeholder=" Enter Area se" class="box" required>
+    <br>
+
+    <label for="smoothness_se">Smoothness_se: </label>
+    <input type="text" id="smoothness_se" name="smoothness_se" placeholder=" Enter Smoothness se" class="box" required>
+    <br>
+
+    <label for="compactness_se">Compactness_se: </label>
+    <input type="text" id="compactness_se" name="compactness_se" placeholder=" Enter Compactness_se se" class="box" required>
+    <br>
+
+    <label for="concavity_se">Concavity_se: </label>
+    <input type="text" id="concavity_se" name="concavity_se" placeholder="Enter Concavity_se" class="box" required>
+    <br>
+
+    <label for="concave points_se">Concave points_se: </label>
+    <input type="text" id="concave points_se" name="concave points_se" placeholder=" Enter Concave points se" class="box" required>
+    <br>
+
+    <label for="symmetry_se">Symmetry_se: </label>
+    <input type="text" id="symmetry_se" name="symmetry_se"  placeholder=" Enter Symmetry se" class="box" required>
+    <br>
+
+    <label for="fractal_dimension_se">Fractal_dimension_se: </label>
+    <input type="text" id="fractal_dimension_se" name="fractal_dimension_se" placeholder="Enter fractal_dimension_se" class="box" required>
+    <br>
+
+    <label for="radius_worst">Radius_worst: </label>
+    <input type="text" id="radius_worst" name="radius_worst" placeholder=" Enter radius worst" class="box" required>
+    <br>
+
+    <label for="texture_worst">Texture_worst: </label>
+    <input type="text" id="texture_worst" name="texture_worst" placeholder=" Enter Texture worst" class="box" required>
+    <br>
+
+    <label for="perimeter_worst">Perimeter_worst: </label>
+    <input type="text" id="perimeter_worst" name="perimeter_worst" placeholder=" Enter Perimeter worst" class="box" required>
+    <br>
+
+    <label for="area_worst">Area_worst: </label>
+    <input type="text" id="area_worst" name="area_worst" placeholder=" Enter Area worst" class="box" required>
+    <br>
+
+    <label for="smoothness_worst">Smoothness_worst: </label>
+    <input type="text" id="smoothness_worst" name="smoothness_worst" placeholder=" Enter Smoothness worst" class="box" required>
+    <br>
+
+    <label for="compactness_worst">Compactness_worst: </label>
+    <input type="text" id="compactness_worst" name="compactness_worst" placeholder=" Enter Compactness worst" class="box" required>
+    <br>
+
+    <label for="concavity_worst">Concavity_worst: </label>
+    <input type="text" id="concavity_worst" name="concavity_worst" placeholder=" Enter Concavity worst" class="box" required>
+    <br>
+
+    <label for="concave points_worst">Concave points_worst: </label>
+    <input type="text" id="concave points_worst" name="concave points_worst" placeholder=" Enter Concave points worst" class="box" required>
+    <br>
+
+    <label for="symmetry_worst">Symmetry_worst : </label>
+    <input type="text" id="symmetry_worst" name="symmetry_worst" placeholder=" Enter Symmetry worst" class="box" required>
+    <br>
+
+    <label for="fractal_dimension_worst">Fractal_dimension_worst : </label>
+    <input type="text" id="fractal_dimension_worst" name="fractal_dimension_worst"placeholder=" Enter Fractal dimension worst" class="box" required>
+    <br>
+    <br>
+
+   <center> <input type="submit" value="Submit" class="button" style=" width: 40%; border-radius: 50%; height: 2.5em; justify-content: center;background-color: #a9ef6c;"><br><br></center>
+</form>
+
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<footer id="main-footer">
+      Copyright &copy; 2020
+    </footer>
+</body>
+</html>

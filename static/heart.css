@@ -1,0 +1,67 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+:root{
+    --bg-color: #ddead2;
+    --text-color: #000000;
+    --main-color: #000000;
+    --hover: #999999;
+    --opyions:#ffffff;
+    --navbg: #a9ef6c;
+}
+body{
+    min-height: 100px;
+    background-size: cover;
+    background-attachment: fixed; 
+}
+.cancer_heading{
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
+}
+#c_head{
+    font-size: 1.8em;
+}
+#sub_heading{
+    font-size: 25px;
+    margin-top: 10px;
+}
+#cancer_form{
+    width: 90%;
+    margin: auto;   
+}
+form{
+    opacity: 0.9;
+    padding-top: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54%;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 10px;
+    padding-bottom: 60px;
+    background: linear-gradient(rgb(3, 3, 92),white);
+    color: #ffffff;
+    
+    
+}
+form .box{
+    width: 98.5%;
+    height: 2.5em;
+    position: relative;
+    bottom: 10px;    
+}
+button{
+    width: 98%;
+    height: 2.5em;
+    justify-content: center;
+    background-color: #a9ef6c;
+}
